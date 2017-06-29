@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/LinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvClear"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@drawable/tv_bg"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="clear"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="清除" />
+
+        <TextView
+            android:id="@+id/tvLine"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@drawable/tv_bg_4"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="drawLine"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="线条" />
+
+
+        <TextView
+            android:id="@+id/tvPaint"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@drawable/tv_bg_4"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="drawPaint"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="画笔" />
+
+        <TextView
+            android:id="@+id/tvEraser"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@drawable/tv_bg_4"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="eraser"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="橡皮擦" />
+    </LinearLayout>
+
+    <lsw.boxfish.cn.greendaodemo.meituan.DrawPictureView
+        android:id="@+id/drawPicture"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/LinearLayout" />
+</RelativeLayout>

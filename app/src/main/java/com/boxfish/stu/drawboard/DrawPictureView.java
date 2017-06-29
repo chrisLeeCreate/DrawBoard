@@ -44,6 +44,17 @@ public class DrawPictureView extends View {
     private ArrayList<PathBean> deletePathList = new ArrayList<>();
 
 
+    private int lineColor = Color.BLACK;
+    private int paintColor = Color.BLUE;
+    private float lineWidthProgress = 50;
+    private float paintWidthProgress = 50;
+    private float eraserWidthProgress = 50;
+
+    private int paintWidth = 70;
+    private int eraserWidth = 100;
+    private int lineWidth = 20;
+
+
     public DrawPictureView(Context context) {
         super(context);
         initlinePaint();
@@ -61,8 +72,8 @@ public class DrawPictureView extends View {
 
     private void initlinePaint() {
         linePaint = new Paint();
-        linePaint.setColor(Color.BLACK);
-        linePaint.setStrokeWidth(10);
+        linePaint.setColor(lineColor);
+        linePaint.setStrokeWidth(lineWidth * lineWidthProgress / 100);
         linePaint.setStyle(Paint.Style.STROKE);
         linePaint.setStrokeCap(Paint.Cap.ROUND);
         linePaint.setStrokeJoin(Paint.Join.ROUND);
@@ -71,9 +82,9 @@ public class DrawPictureView extends View {
 
         paintPaint = new Paint();
         paintPaint.setStyle(Paint.Style.STROKE);
-        paintPaint.setColor(Color.BLUE);
-        paintPaint.setStrokeWidth(50);
+        paintPaint.setColor(paintColor);
         paintPaint.setStrokeCap(Paint.Cap.ROUND);
+        paintPaint.setStrokeWidth(paintWidth * paintWidthProgress / 100);
         paintPaint.setPathEffect(new CornerPathEffect(100f));
         paintPaint.setStrokeJoin(Paint.Join.ROUND);
 
@@ -82,7 +93,7 @@ public class DrawPictureView extends View {
         eraserPaint.setStyle(Paint.Style.STROKE);
         eraserPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
         eraserPaint.setColor(Color.TRANSPARENT);
-        eraserPaint.setStrokeWidth(50);
+        eraserPaint.setStrokeWidth(eraserWidth * eraserWidthProgress / 100);
         eraserPaint.setStrokeCap(Paint.Cap.ROUND);
         eraserPaint.setPathEffect(new CornerPathEffect(100f));
         eraserPaint.setStrokeJoin(Paint.Join.ROUND);
@@ -146,15 +157,16 @@ public class DrawPictureView extends View {
             case MotionEvent.ACTION_UP: {
                 switch (drawStyle) {
                     case DrawLine: {
-                        pathlist.add(new PathBean(linePath, linePaint, 10, Color.BLACK));
+                        pathlist.add(new PathBean(linePath, linePaint, lineWidthProgress * lineWidth / 100, lineColor));
                         break;
                     }
                     case DrawPaint: {
-                        pathlist.add(new PathBean(linePath, paintPaint, 50, Color.BLUE));
+                        pathlist.add(new PathBean(linePath, paintPaint, paintWidthProgress * paintWidth / 100, paintColor));
                         break;
                     }
                     case DrawEraser: {
-                        pathlist.add(new PathBean(linePath, eraserPaint, 50, Color.TRANSPARENT));
+                        pathlist.add(new PathBean(linePath, eraserPaint, eraserWidthProgress * eraserWidth / 100, Color.TRANSPARENT));
+
                         break;
                     }
                 }
@@ -210,4 +222,70 @@ public class DrawPictureView extends View {
         }
         invalidate();
     }
+
+    public int getlineColor() {
+        return lineColor;
+    }
+
+    public void setLineColor(int lineColor) {
+        this.lineColor = lineColor;
+        linePaint.setColor(lineColor);
+    }
+
+    public int getPaintColor() {
+        return paintColor;
+    }
+
+    public void setPaintColor(int paintColor) {
+        this.paintColor = paintColor;
+        paintPaint.setColor(paintColor);
+    }
+
+    public float getLineWidthProgress() {
+        return lineWidthProgress;
+    }
+
+    public void setLineWidthProgress(float lineWidthProgress) {
+        this.lineWidthProgress = lineWidthProgress;
+    }
+
+    public int getLineWidth() {
+        return lineWidth;
+    }
+
+    public void setLineWidth() {
+        linePaint.setStrokeWidth(lineWidth * lineWidthProgress / 100);
+    }
+
+    public float getPaintWidthProgress() {
+        return paintWidthProgress;
+    }
+
+    public void setPaintWidthProgress(float paintWidthProgress) {
+        this.paintWidthProgress = paintWidthProgress;
+    }
+
+    public int getPaintWidth() {
+        return paintWidth;
+    }
+
+    public void setPaintWidth() {
+        paintPaint.setStrokeWidth(paintWidth * paintWidthProgress / 100);
+    }
+    public float getEraserWidthProgress() {
+        return eraserWidthProgress;
+    }
+
+    public void setEraserWidthProgress(float eraserWidthProgress) {
+        this.eraserWidthProgress = eraserWidthProgress;
+    }
+
+    public int getEraserWidth() {
+        return eraserWidth;
+    }
+
+    public void setEraserWidth() {
+        eraserPaint.setStrokeWidth(eraserWidth * eraserWidthProgress / 100);
+    }
+
 }

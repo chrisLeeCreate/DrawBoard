@@ -102,7 +102,6 @@ public class DrawPictureView extends View {
     private void initBitmap() {
         mBitmap = Bitmap.createBitmap(viewWidth, viewHeight, Bitmap.Config.ARGB_8888);
         mCanvas.setBitmap(mBitmap);
-//        mCanvas.drawColor(Color.WHITE);
     }
 
     @Override
@@ -147,7 +146,7 @@ public class DrawPictureView extends View {
             case MotionEvent.ACTION_UP: {
                 switch (drawStyle) {
                     case DrawLine: {
-                        pathlist.add(new PathBean(linePath, linePaint, 50, Color.BLACK));
+                        pathlist.add(new PathBean(linePath, linePaint, 10, Color.BLACK));
                         break;
                     }
                     case DrawPaint: {

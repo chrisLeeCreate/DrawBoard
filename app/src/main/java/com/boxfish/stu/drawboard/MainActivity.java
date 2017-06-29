@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         drawPictureView = (DrawPictureView) findViewById(R.id.drawPicture);
+        findViewById(R.id.tvLine).setSelected(true);
     }
 
     public void clearSelect() {
@@ -23,6 +24,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void clear(View view) {
         drawPictureView.clear();
+    }
+
+    public void reset(View view) {
+        drawPictureView.reset();
+    }
+
+    public void forward(View view) {
+        drawPictureView.forward();
     }
 
     public void drawLine(View view) {

@@ -16,6 +16,8 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
+import java.util.ArrayList;
+
 /**
  * Created by lishaowei on 2017/6/29.
  */
@@ -38,6 +40,8 @@ public class DrawPictureView extends View {
     private final int DrawEraser = 2;
     private Paint eraserPaint;
     private Paint paintPaint;
+    private ArrayList<PathBean> pathlist = new ArrayList<>();
+    private ArrayList<PathBean> deletePathList = new ArrayList<>();
 
 
     public DrawPictureView(Context context) {
@@ -141,6 +145,21 @@ public class DrawPictureView extends View {
                 break;
             }
             case MotionEvent.ACTION_UP: {
+                switch (drawStyle) {
+                    case DrawLine: {
+                        pathlist.add(new PathBean(linePath, linePaint, 50, Color.BLACK));
+                        break;
+                    }
+                    case DrawPaint: {
+                        pathlist.add(new PathBean(linePath, paintPaint, 50, Color.BLUE));
+                        break;
+                    }
+                    case DrawEraser: {
+                        pathlist.add(new PathBean(linePath, eraserPaint, 50, Color.TRANSPARENT));
+                        break;
+                    }
+                }
+                deletePathList.clear();
                 break;
             }
         }
@@ -158,8 +177,38 @@ public class DrawPictureView extends View {
     public void paintEraser() {
         drawStyle = DrawEraser;
     }
+
     public void clear() {
+        pathlist.clear();
+        deletePathList.clear();
         initBitmap();
+        invalidate();
+    }
+
+    public void reset() {
+        initBitmap();
+        if (pathlist.size() > 0) {
+            PathBean pathBean = pathlist.get(pathlist.size() - 1);
+            pathlist.remove(pathBean);
+            deletePathList.add(pathBean);
+        }
+        for (int i = 0; i < pathlist.size(); i++) {
+            pathlist.get(i).paint.setStrokeWidth(pathlist.get(i).width);
+            pathlist.get(i).paint.setColor(pathlist.get(i).color);
+            mCanvas.drawPath(pathlist.get(i).path, pathlist.get(i).paint);
+        }
+        invalidate();
+    }
+
+    public void forward() {
+        if (deletePathList.size() > 0) {
+            PathBean pathBean = deletePathList.get(deletePathList.size() - 1);
+            pathBean.paint.setStrokeWidth(pathBean.width);
+            pathBean.paint.setColor(pathBean.color);
+            mCanvas.drawPath(pathBean.path, pathBean.paint);
+            deletePathList.remove(deletePathList.size() - 1);
+            pathlist.add(pathBean);
+        }
         invalidate();
     }
 }

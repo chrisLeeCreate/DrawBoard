@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.CornerPathEffect;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.PaintFlagsDrawFilter;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
@@ -76,6 +77,7 @@ public class DrawPictureView extends View {
         linePaint.setStrokeWidth(lineWidth * lineWidthProgress / 100);
         linePaint.setStyle(Paint.Style.STROKE);
         linePaint.setStrokeCap(Paint.Cap.ROUND);
+        linePaint.setAntiAlias(true);
         linePaint.setStrokeJoin(Paint.Join.ROUND);
         linePaint.setPathEffect(new CornerPathEffect(100f));
 
@@ -87,6 +89,7 @@ public class DrawPictureView extends View {
         paintPaint.setStrokeWidth(paintWidth * paintWidthProgress / 100);
         paintPaint.setPathEffect(new CornerPathEffect(100f));
         paintPaint.setStrokeJoin(Paint.Join.ROUND);
+        paintPaint.setAntiAlias(true);
 
         eraserPaint = new Paint();
         eraserPaint.setAlpha(0);
@@ -97,9 +100,11 @@ public class DrawPictureView extends View {
         eraserPaint.setStrokeCap(Paint.Cap.ROUND);
         eraserPaint.setPathEffect(new CornerPathEffect(100f));
         eraserPaint.setStrokeJoin(Paint.Join.ROUND);
+        eraserPaint.setAntiAlias(true);
 
         linePath = new Path();
         mCanvas = new Canvas();
+        mCanvas.setDrawFilter(new PaintFlagsDrawFilter(0, Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG));
     }
 
     @Override
@@ -272,6 +277,7 @@ public class DrawPictureView extends View {
     public void setPaintWidth() {
         paintPaint.setStrokeWidth(paintWidth * paintWidthProgress / 100);
     }
+
     public float getEraserWidthProgress() {
         return eraserWidthProgress;
     }

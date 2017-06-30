@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.boxfish.stu.drawboard.PieView.PieData;
-import com.boxfish.stu.drawboard.PieView.PieView;
+import com.boxfish.stu.drawboard.canvas.CanvasTestOne;
 
 import java.util.ArrayList;
 
@@ -13,7 +13,8 @@ public class Main2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        PieView view = new PieView(this);
+//        PieView view = new PieView(this);
+        CanvasTestOne view = new CanvasTestOne(this);
 //        setContentView(R.layout.activity_main2);
         setContentView(view);
         ArrayList<PieData> datas = new ArrayList<>();
@@ -27,6 +28,6 @@ public class Main2Activity extends AppCompatActivity {
         datas.add(pieData3);
         datas.add(pieData4);
         datas.add(pieData5);
-        view.setData(datas);
+//        view.setData(datas);
     }
 }

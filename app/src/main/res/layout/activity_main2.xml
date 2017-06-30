@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.boxfish.stu.drawboard.Main2Activity">
 
-    <com.boxfish.stu.drawboard.Heartbeat
+    <com.boxfish.stu.drawboard.view.LocationView
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </RelativeLayout>

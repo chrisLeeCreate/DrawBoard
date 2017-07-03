@@ -1,10 +1,11 @@
 package com.boxfish.stu.drawboard;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.boxfish.stu.drawboard.Path.RadarView;
 import com.boxfish.stu.drawboard.PieView.PieData;
-import com.boxfish.stu.drawboard.canvas.CanvasTestTwo;
 
 import java.util.ArrayList;
 
@@ -14,8 +15,10 @@ public class Main2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        PieView view = new PieView(this);
-        CanvasTestTwo view = new CanvasTestTwo(this);
+        RadarView view = new RadarView(this);
 //        setContentView(R.layout.activity_main2);
+        double data[] = {100, 80, 90, 80, 30, 40};
+        view.setColor(Color.RED).setData(data).setCount(6);
         setContentView(view);
         ArrayList<PieData> datas = new ArrayList<>();
         PieData pieData = new PieData("sloop", 60);

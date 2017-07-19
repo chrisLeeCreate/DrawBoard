@@ -14,4 +14,18 @@ public class ExampleUnitTest {
     public void addition_isCorrect() throws Exception {
         assertEquals(4, 2 + 2);
     }
+
+    @Test
+    public void test() {
+        TestThread testThread = new TestThread();
+        testThread.run();
+    }
+
+    public class TestThread implements Runnable {
+
+        @Override
+        public void run() {
+            System.out.print("a");
+        }
+    }
 }

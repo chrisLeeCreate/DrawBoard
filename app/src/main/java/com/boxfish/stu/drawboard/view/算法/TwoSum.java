@@ -1,5 +1,4 @@
-package com.boxfish.stu.drawboard.view.设计模式.nums.node;
-
+package com.boxfish.stu.drawboard.view.算法;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -8,7 +7,7 @@ import java.util.HashMap;
  * Created by lishaowei on 2017/7/27.
  */
 
-public class Caozuo {
+public class TwoSum {
 
     public static void main(String[] args) {
         int[] nums = new int[]{2, 7, 11, 13};

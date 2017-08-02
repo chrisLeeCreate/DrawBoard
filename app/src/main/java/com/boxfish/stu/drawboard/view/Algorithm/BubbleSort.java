@@ -4,7 +4,7 @@ package com.boxfish.stu.drawboard.view.Algorithm;
  * Created by lishaowei on 2017/8/1.
  */
 
-public class maopaoSort {
+public class BubbleSort {
     public static void sort(int[] args) {
         for (int i = 0; i < args.length; i++) {
             for (int j = i + 1; j < args.length; j++) {

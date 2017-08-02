@@ -4,7 +4,7 @@ package com.boxfish.stu.drawboard.view.Algorithm;
  * Created by lishaowei on 2017/8/1.
  */
 
-public class xuanzeSort {
+public class SelectSort {
 
     public static void sort(int[] args) {
         for (int i = 0; i < args.length; i++) {

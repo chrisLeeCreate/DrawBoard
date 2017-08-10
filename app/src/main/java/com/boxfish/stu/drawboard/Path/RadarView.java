@@ -26,7 +26,7 @@ public class RadarView extends View {
     private int count = 6;
     private float angle = (float) (Math.PI * 2 / count);
     private double[] data = {100, 60, 60, 60, 100, 50}; //各维度分值
-    private String[] titles = {"a", "b", "c", "d", "e", "f"};
+    private String[] titles = {"a", "B", "c", "d", "e", "f"};
     private float maxValue = 100;
 
     private int color = Color.BLUE;

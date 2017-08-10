@@ -45,7 +45,7 @@ public class HashMapTest {
 
         HashMap<String, String> hashMap = new HashMap();
         hashMap.put("a", "aaa");
-        hashMap.put("b", "bbb");
+        hashMap.put("B", "bbb");
 //        hashMap.put(1, 3);
         System.out.println("  value:" + hashMap.get("a"));
 
@@ -71,7 +71,7 @@ public class HashMapTest {
 
         TreeMap<Object, Object> treeMap = new TreeMap<>();
         treeMap.put("a", "aaa");
-        treeMap.put("b", "bbb");
+        treeMap.put("B", "bbb");
         treeMap.put("d", "ddd");
         treeMap.put("c", "ccc");
         treeMap.put("f", "fff");

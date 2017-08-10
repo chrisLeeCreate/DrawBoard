@@ -14,7 +14,7 @@ public class ThreadOne {
         Thread thread = new Thread(a);
         Thread thread2 = new Thread(b);
 //        a.run();
-//        b.run();
+//        B.run();
         thread.start();
         thread2.start();
         try {

@@ -228,11 +228,11 @@ public class DonutProgress extends View {
         this.invalidate();
     }
 
-    public int getTextColor() {
+    public int getViewColor() {
         return viewColor;
     }
 
-    public void setTextColor(int textColor) {
+    public void setViewColor(int textColor) {
         this.viewColor = textColor;
         this.invalidate();
     }
@@ -369,7 +369,7 @@ public class DonutProgress extends View {
     protected Parcelable onSaveInstanceState() {
         final Bundle bundle = new Bundle();
         bundle.putParcelable(INSTANCE_STATE, super.onSaveInstanceState());
-        bundle.putInt(INSTANCE_TEXT_COLOR, getTextColor());
+        bundle.putInt(INSTANCE_TEXT_COLOR, getViewColor());
         bundle.putFloat(INSTANCE_TEXT_SIZE, getTextSize());
         bundle.putFloat(INSTANCE_INNER_BOTTOM_TEXT_SIZE, getInnerBottomTextSize());
         bundle.putString(INSTANCE_INNER_BOTTOM_TEXT, getInnerBottomText());

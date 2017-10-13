@@ -6,35 +6,46 @@
     android:layout_height="wrap_content"
     tools:context="com.boxfish.stu.drawboard.view.Main3Activity">
 
-    <com.boxfish.stu.drawboard.xes.DonutProgress
-        android:id="@+id/donut_progress"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        lishaowei:donut_finished_stroke_width="3dp"
-        lishaowei:donut_show_text="true"
-        lishaowei:donut_unfinished_stroke_width="1dp"
-        lishaowei:donut_view_color="#29CB97" />
+    <!--<com.boxfish.stu.drawboard.xes.DonutProgress-->
+    <!--android:id="@+id/donut_progress"-->
+    <!--android:layout_width="80dp"-->
+    <!--android:layout_height="80dp"-->
+    <!--lishaowei:donut_finished_stroke_width="3dp"-->
+    <!--lishaowei:donut_show_text="true"-->
+    <!--lishaowei:donut_unfinished_stroke_width="1dp"-->
+    <!--lishaowei:donut_view_color="#29CB97" />-->
 
-    <com.boxfish.stu.drawboard.xes.DonutProgress
-        android:id="@+id/donut_progress2"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginLeft="30dp"
-        android:layout_toRightOf="@+id/donut_progress"
-        lishaowei:donut_finished_stroke_width="3dp"
-        lishaowei:donut_show_text="true"
-        lishaowei:donut_unfinished_stroke_width="1dp"
-        lishaowei:donut_view_color="#FEC400" />
+    <!--<com.boxfish.stu.drawboard.xes.DonutProgress-->
+    <!--android:id="@+id/donut_progress2"-->
+    <!--android:layout_width="80dp"-->
+    <!--android:layout_height="80dp"-->
+    <!--android:layout_marginLeft="30dp"-->
+    <!--android:layout_toRightOf="@+id/donut_progress"-->
+    <!--lishaowei:donut_finished_stroke_width="3dp"-->
+    <!--lishaowei:donut_show_text="true"-->
+    <!--lishaowei:donut_unfinished_stroke_width="1dp"-->
+    <!--lishaowei:donut_view_color="#FEC400" />-->
 
-    <com.boxfish.stu.drawboard.xes.DonutProgress
-        android:id="@+id/donut_progress3"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginLeft="30dp"
-        android:layout_toRightOf="@+id/donut_progress2"
-        lishaowei:donut_finished_stroke_width="3dp"
-        lishaowei:donut_show_text="true"
-        lishaowei:donut_unfinished_stroke_width="1dp"
-        lishaowei:donut_view_color="#C563F9" />
+    <!--<com.boxfish.stu.drawboard.xes.DonutProgress-->
+    <!--android:id="@+id/donut_progress3"-->
+    <!--android:layout_width="80dp"-->
+    <!--android:layout_height="80dp"-->
+    <!--android:layout_marginLeft="30dp"-->
+    <!--android:layout_toRightOf="@+id/donut_progress2"-->
+    <!--lishaowei:donut_finished_stroke_width="3dp"-->
+    <!--lishaowei:donut_show_text="true"-->
+    <!--lishaowei:donut_unfinished_stroke_width="1dp"-->
+    <!--lishaowei:donut_view_color="#C563F9" />-->
+    <com.boxfish.stu.drawboard.xes.CircleProcessView
+        android:id="@+id/circleProcessView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        lishaowei:circle_text="986"
+        lishaowei:circle_bottom_text="哈哈哈哈"
+        lishaowei:circle_progress="80.23"
+        lishaowei:circle_view_color="@color/color1" />
+
 
 </RelativeLayout>

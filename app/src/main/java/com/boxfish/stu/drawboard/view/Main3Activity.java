@@ -3,9 +3,9 @@ package com.boxfish.stu.drawboard.view;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageView;
 
 import com.boxfish.stu.drawboard.R;
-import com.boxfish.stu.drawboard.xes.CircleProcessView;
 
 public class Main3Activity extends AppCompatActivity {
 
@@ -14,14 +14,10 @@ public class Main3Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
-        CircleProcessView circleProcessView = (CircleProcessView) findViewById(R.id.circleProcessView);
-        circleProcessView.setCircleText("123");
-        circleProcessView.setCircleBottomText("分辨率");
-        circleProcessView.setCircleProcess(50);
-        circleProcessView.setCircleViewColor(R.color.color2);
-        circleProcessView.build();
-        mContext = this;
+        setContentView(R.layout.activity_main4);
+        ImageView viewById = (ImageView) findViewById(R.id.image);
+//        String text = getIntent().getStringExtra("text");
+//        viewById.setText(text);
 //        DonutProgress donutProgress = (DonutProgress) findViewById(R.id.donut_progress);
 //        donutProgress.setText("798");
 //        donutProgress.setTextSize(mContext.getResources().getDimension(R.dimen.activity_vertical_margin22));
